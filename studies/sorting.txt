@@ -1,0 +1,12 @@
+Sorting Algorithms
+Bubble sort = O(n²)
+Compara se n é maior que n + 1, se sim, troca os dois de posição. Pula para o próximo e faz a mesma comparação até o penúltimo/último elemento.
+
+Selection sort = O(n²)
+Seleciona o primeiro elemento como sendo o menor. Então, compara com todos os outros da lista, se encontrar algum elemento que seja menor, agora este vira o parâmetro, e troca o valor com o parâmetro anterior. Pula para o próximo elemento e faz a mesma coisa até o final dos elementos.
+
+Insertion sort = O(n²)
+A ideia é separar os elementos da lista entre ORDENADOS e NÃO ORDENADOS. Para isso, define o primeiro elemento da lista como sendo o elemento chave. Então, começando do segundo elemento, compara com o elemento chave. Se for menor que o chave, move o segundo elemento para a esquerda (antes do chave). Agora todos os que estão na direita (antes do chave) são considerados os ordenados. Os da esquerda são considerados os não ordenados ainda. Depois, pega o próximo elemento da direita (depois do chave), compara com todos os da esquerda e insere no local correto entre os ordenados. Faz isso até passar por todos os não ordenados (da esquerda), até que eles estejam nos ordenados (direita).
+
+https://builtin.com/machine-learning/fastest-sorting-algorithm
+https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/
