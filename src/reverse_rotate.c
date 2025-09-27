@@ -1,24 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 19:27:47 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/09/26 18:12:40 by bmoreira         ###   ########.fr       */
+/*   Created: 2025/09/26 22:08:00 by bmoreira          #+#    #+#             */
+/*   Updated: 2025/09/26 22:08:01 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-typedef struct s_dlist
-{
-	void			*content;
-	int				index;
-	struct s_dlist	*previous;
-	struct s_dlist	*next;
-}	t_dlist;
-
-#endif
