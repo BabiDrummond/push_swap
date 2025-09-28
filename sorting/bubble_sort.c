@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 21:31:08 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/09/26 23:26:16 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/09/27 15:12:30 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,25 +78,26 @@ t_list bubble_sort_list(t_list *head)
 		while (current->next)
 		{
 			next = current->next;
+			previous = current->previous;
 			if (current->content > next->content)
 			{
 				if (current == head) // sa ou sb
 				{
 					current->next = next->next;
 					next->next = current;
-					current->previous = next;
-					head = current->previous;
+					previous = next;
+					head = previous;
 				}
 				else // r ou rr e s
 				{
 					current->next = next->next;
 					next->next = current;
-					current->previous->next = next;
-					current->previous = next;
+					previous->next = next;
+					previous = next;
 				}
 				continue;
 			}
-			current->previous = current;
+			previous = current;
 			current = current->next;
 		}
 	}
