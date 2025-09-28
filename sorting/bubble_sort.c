@@ -6,9 +6,11 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 21:31:08 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/09/27 15:12:30 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/09/27 23:44:26 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../include/push_swap.h"
 
 int	*bubble_sort(int *arr, int size)
 {
@@ -38,29 +40,6 @@ int	*bubble_sort(int *arr, int size)
 	return (arr);
 }
 
-typedef struct s_list
-{
-	void			*content;
-	struct	s_list	*previous;
-	struct	s_list	*next;
-}	t_list;
-
-
-int	ft_lstsize(t_list *head)
-{
-	int	len;
-	t_list *current;
-
-	len = 0;
-	current = head;
-	while (current)
-	{
-		current = current->next;
-		len++;
-	}
-	return (len);
-}
-
 t_list bubble_sort_list(t_list *head)
 {
 	t_list	*current;
@@ -74,11 +53,10 @@ t_list bubble_sort_list(t_list *head)
 	while (i < size)
 	{
 		current = head;
-		current->previous = head;
+		previous = head;
 		while (current->next)
 		{
 			next = current->next;
-			previous = current->previous;
 			if (current->content > next->content)
 			{
 				if (current == head) // sa ou sb
