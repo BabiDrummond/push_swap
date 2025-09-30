@@ -6,48 +6,26 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:07:58 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/09/27 16:12:56 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/09/30 03:15:57 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    node_add_front(t_node **lst, t_node *node)
-{
-	if (!lst || !node)
-		return ;
-	node->next = *lst;
-	*lst = node;
-}
-
-void    del_node(t_node *head)
-{
-	if (!head)
-		return ;
-	head->key = 0;
-	free(head);
-}
-
-void	lst_del_front(t_list **head)
-{
-	t_list *temp;
-
-	if (!head || !*head)
-		return ;
-	temp = *head;
-	*head = (*head)->next;
-	free(temp->content);
-	free(temp);
-}
-
-t_node  *push(t_node *first, t_node *second)
+t_node	*push(t_node *first, t_node *second)
 {
 	ft_lstadd_front(&first, second);
-	lst_del_front(&second);
+	lst_del_front(&second, free);
 }
 
-t_list  *push(t_list *first, t_list *second)
+void	*push_a(t_list *a, t_list *b)
 {
-	ft_lstadd_front(&first, second);
-	lst_del_front(&second);
+	ft_lstadd_front(&a, b);
+	lst_del_front(&b, free);
+}
+
+void	*push_b(t_list *a, t_list *b)
+{
+	ft_lstadd_front(&b, a);
+	lst_del_front(&a, free);
 }

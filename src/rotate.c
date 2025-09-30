@@ -6,14 +6,13 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:08:03 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/09/27 16:33:20 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/09/30 03:16:52 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	rotate(t_list **head)
-{	
+{
 	ft_lstadd_back(head, &head);
-	
 }
