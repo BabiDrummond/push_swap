@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 22:07:58 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/09/30 03:29:17 by bmoreira         ###   ########.fr       */
+/*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
+/*   Updated: 2025/09/30 03:38:36 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	push_a(t_list *a, t_list *b)
+int main(void)
 {
-	if (!b)
-		return ;
-	ft_lstadd_front(&a, b);
-	lst_del_front(&b, free);
-	ft_printf("pa");
-}
-
-void	push_b(t_list *a, t_list *b)
-{
-	if (!a)
-		return ;
-	ft_lstadd_front(&b, a);
-	lst_del_front(&a, free);
-	ft_printf("pb");
+    ft_printf("Hello");
 }

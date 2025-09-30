@@ -7,7 +7,11 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS_DIR = src/
-SRCS = map_loader.c
+SRCS = push.c			\
+	reverse_rotate.c 	\
+	rotate.c 			\
+	swap.c				\
+	main.c
 OBJS_DIR = objs/
 OBJS = $(SRCS:%.c=$(OBJS_DIR)%.o)
 

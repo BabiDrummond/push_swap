@@ -6,23 +6,11 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:39:15 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/09/27 16:04:27 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/09/30 03:32:48 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-t_node	*swap(t_node *head)
-{
-	int	temp;
-
-	if (!head || !head->next)
-		return (head);
-	temp = head->key;
-	head->key = head->next->key;
-	head->next->key = temp;
-	return (head);
-}
+#include "../include/push_swap.h"
 
 t_list	*swap(t_list *head)
 {
