@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:27:47 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/09/27 16:10:38 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/09/30 04:00:31 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@
 # include <unistd.h>
 # include "../libft/include/libft.h"
 
-typedef struct s_node
-{
-	int				key;
-	struct s_node	*previous;
-	struct s_node	*next;
-}	t_node;
+void	push_a(t_list *a, t_list *b);
+void	push_b(t_list *a, t_list *b);
 
 #endif
