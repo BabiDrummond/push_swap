@@ -6,26 +6,69 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:07:58 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/02 16:40:34 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/06 18:38:04 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	push_a(t_list *a, t_list *b)
+void	push(t_list **head, t_list **node)
 {
-	if (!b)
+	t_list	*temp;
+
+	if (!*node || !node)
 		return ;
-	ft_lstadd_front(&a, b);
-	lst_del_front(&b, NULL);
-	ft_printf("pa");
+	temp = *node;
+	lst_del_front(node, NULL);
+	lst_add_front(head, temp);
 }
 
-void	push_b(t_list *a, t_list *b)
-{
-	if (!a)
-		return ;
-	ft_lstadd_front(&b, a);
-	lst_del_front(&a, NULL);
-	ft_printf("pb");
-}
+// void	print_list_int(t_list *head)
+// {
+// 	while(head)
+// 	{
+// 		printf("%d", *(int *)head->content);
+// 		head = head->next;
+// 	}
+// 	printf("\n");
+// }
+//
+// int main(void)
+// {
+//     // Test with ints
+// 	t_list *head_a = NULL;
+// 	t_list *head_b = NULL;
+// 	int vals[] = {9, 3, 1, 2, 4};
+// 	int vals2[] = {8, 3, 1, 2, 4};
+// 	int i = 0;
+//
+// 	while (i < 5)
+// 		lst_add_back(&head_a, lst_new(&vals[i++]));
+// 	i = 0;
+// 	while (i < 5)
+// 		lst_add_back(&head_b, lst_new(&vals2[i++]));
+//
+// 	printf("Before: ");
+// 	print_list_int(head_a);
+// 	print_list_int(head_b);
+// 	push(&head_a, &head_b);
+// 	printf("After1: ");
+// 	print_list_int(head_a);
+// 	print_list_int(head_b);
+// 	push(&head_a, &head_b);
+// 	printf("After2: ");
+// 	print_list_int(head_a);
+// 	print_list_int(head_b);
+// 	push(&head_a, &head_b);
+// 	printf("After3: ");
+// 	print_list_int(head_a);
+// 	print_list_int(head_b);
+// 	push(&head_a, &head_b);
+// 	printf("After4: ");
+// 	print_list_int(head_a);
+// 	print_list_int(head_b);
+// 	push(&head_a, &head_b);
+// 	printf("After5: ");
+// 	print_list_int(head_a);
+// 	print_list_int(head_b);
+// }

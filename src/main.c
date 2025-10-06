@@ -6,13 +6,13 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/09/30 03:38:36 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/02 19:15:06 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int main(void)
+int	main(void)
 {
-    ft_printf("Hello");
+	ft_printf("Hello");
 }
