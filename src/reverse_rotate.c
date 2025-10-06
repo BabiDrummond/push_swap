@@ -6,19 +6,22 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:08:00 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/06 18:36:58 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/06 19:01:21 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	reverse_rotate(t_list **head)
+int	reverse_rotate(t_list **head)
 {
 	t_list	*last;
 
+	if (!*head)
+		return (1);
 	last = lst_last(*head);
 	lst_del_back(head, NULL);
 	lst_add_front(head, last);
+	return (0);
 }
 
 // void	print_list_int(t_list *head)

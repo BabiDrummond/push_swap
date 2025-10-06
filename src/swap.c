@@ -6,21 +6,22 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:39:15 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/06 18:53:48 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/06 19:00:40 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	swap(t_list **head)
+int	swap(t_list **head)
 {
 	void	*temp;
 
-	if (!head || !*head)
-		return ;
+	if (!*head)
+		return (1);
 	temp = (*head)->content;
 	(*head)->content = (*head)->next->content;
 	(*head)->next->content = temp;
+	return (0);
 }
 
 // int main(void)

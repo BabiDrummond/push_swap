@@ -6,21 +6,22 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:07:58 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/06 18:38:04 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/06 19:01:30 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	push(t_list **head, t_list **node)
+int	push(t_list **head, t_list **node)
 {
 	t_list	*temp;
 
-	if (!*node || !node)
-		return ;
+	if (!*head || !*node)
+		return (1);
 	temp = *node;
 	lst_del_front(node, NULL);
 	lst_add_front(head, temp);
+	return (0);
 }
 
 // void	print_list_int(t_list *head)
