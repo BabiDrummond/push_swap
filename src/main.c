@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/06 21:59:50 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/08 21:15:51 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,6 @@
 // 	}
 // }
 
-// void	parse_args(char **args)
-// {
-	
-// }
 
 char	**read_args(int argc, char **args)
 {
@@ -61,24 +57,44 @@ char	**read_args(int argc, char **args)
 	}
 	return (split);
 }
-// cc -Wall -Wextra -Werror main.c ../libft/src/str/* ../libft/src/mem/* ../libft/src/printf/* ../libft/src/math/* ../libft/src/char/* && ./a.out "1 2 aaa   3  4  bada 2147483648" && rm a.out
+
+void	print_list_int(t_list *head)
+{
+	while(head)
+	{
+		ft_printf("%d\n", *(int *)head->content);
+		head = head->next;
+	}
+}
+
+void	parse_args(t_list **head, char **args)
+{
+	long *num;
+	
+	while (*args)
+	{
+		num = malloc(1 * sizeof(long));
+		*num = ft_atol(*args++);
+		if (*num > INT_MAX || *num < INT_MIN)
+		{
+			ft_printf("erro\n");
+			return ; // falta dar free no que ja foi alocado na lista
+		}
+		else
+			lst_add_back(head, lst_new(num));
+	}
+}
+// cc -Wall -Wextra -Werror main.c ../libft/src/str/* ../libft/src/mem/* ../libft/src/printf/* ../libft/src/math/* ../libft/src/char/* ../libft/src/lst/* && ./a.out "1 2 aaa   3  4  bada 2147483648" && rm a.out
 int	main(int argc, char **argv)
 {
 	char **args;
-	long num;
+	t_list *head = NULL;
 	
 	if (argc > 1)
 	{
 		args = read_args(argc - 1, argv + 1);
-		//parse_args(args);
-		while (*args)
-		{
-			num = ft_atol(*args++);
-			if (num > INT_MAX || num < INT_MIN)
-				ft_printf("erro\n");
-			else
-				ft_printf("%d\n", (int) num);
-		}
+		parse_args(&head, args);
+		print_list_int(head);
 	}
 }
 
