@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:39:15 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/06 19:00:40 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/10 16:56:41 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	swap(t_list **head)
 	void	*temp;
 
 	if (!*head)
-		return (1);
+		return (FALSE);
 	temp = (*head)->content;
 	(*head)->content = (*head)->next->content;
 	(*head)->next->content = temp;
-	return (0);
+	return (TRUE);
 }
 
 // int main(void)

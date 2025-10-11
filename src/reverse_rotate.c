@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:08:00 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/06 19:01:21 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/10 16:56:13 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	reverse_rotate(t_list **head)
 	t_list	*last;
 
 	if (!*head)
-		return (1);
+		return (FALSE);
 	last = lst_last(*head);
 	lst_del_back(head, NULL);
 	lst_add_front(head, last);
-	return (0);
+	return (TRUE);
 }
 
 // void	print_list_int(t_list *head)
