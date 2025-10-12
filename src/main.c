@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/11 23:29:40 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/12 00:23:50 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	parse_args(t_list **head, char **args)
 	}
 	return (TRUE);
 }
+
 // cc -Wall -Wextra -Werror main.c ../libft/src/str/* ../libft/src/mem/* ../libft/src/printf/* ../libft/src/math/* ../libft/src/char/* ../libft/src/lst/* && ./a.out "1 2 aaa   3  4  bada 2147483648" && rm a.out
 int	main(int argc, char **argv)
 {
@@ -76,12 +77,11 @@ int	main(int argc, char **argv)
 			return (exit_cleanup(NULL, NULL, EXIT_FAILURE));
 		if (!parse_args(head, args))
 			return (exit_cleanup(head, args, EXIT_FAILURE));
+		bubble_lst(*head, cmp_int);
 		lst_print_int(*head);
 		return (exit_cleanup(head, args, EXIT_SUCCESS));
 	}
 }
 
 // Validações
-// Verificar se tem apenas inteiros
 // Verificar duplicatas
-// Verificar MAX/MIN int
