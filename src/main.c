@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/12 21:24:36 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/13 22:27:55 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,46 @@ int	parse_args(t_list **head, char **args)
 	return (TRUE);
 }
 
+// int	parse_args1(t_list **head, char **args)
+// {
+// 	char	**split;
+// 	long	*num;
+// 	int		i;
+	
+// 	i = 0;
+// 	while (args++)
+// 	{
+// 		split = ft_split(*args, ' ');
+// 		while (split[i])
+// 		{
+// 			num = ft_calloc(1, sizeof(long));
+// 		}
+// 	}
+// 	else
+// 		split = ft_calloc(argc + 1, sizeof(char *));
+// 	if (!split)
+// 		return (FALSE);
+// 	while (i < argc)
+// 		split[i++] = ft_strdup(*args++);
+// 	return (split);
+// 	long	*num;
+// 	int		i;
+	
+// 	i = 0;
+// 	while (args[i])
+// 	{
+// 		num = ft_calloc(1, sizeof(long));
+// 		if (!num)
+// 			return (FALSE);
+// 		*num = ft_atol(args[i++]);
+// 		if (*num > INT_MAX || *num < INT_MIN)
+// 			return (free(num), FALSE);
+// 		else
+// 			lst_add_back(head, lst_new(num));
+// 	}
+// 	return (TRUE);
+// }
+
 int	isequal_int(void *a, void *b)
 {
 	return (*(int *)a == *(int *)b);
@@ -99,6 +139,3 @@ int	main(int argc, char **argv)
 		return (exit_cleanup(head, args, EXIT_SUCCESS));
 	}
 }
-
-// Validações
-// Verificar duplicatas

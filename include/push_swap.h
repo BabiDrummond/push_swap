@@ -6,15 +6,13 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:27:47 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/10 16:57:00 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/13 22:52:06 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h>
-# include <unistd.h>
 # include "../libft/include/libft.h"
 
 # define TRUE 1
