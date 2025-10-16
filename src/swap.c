@@ -6,21 +6,21 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:39:15 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/10 16:56:41 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/15 22:42:23 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	swap(t_list **head)
+int	swap(t_stack **top)
 {
-	void	*temp;
+	int	temp;
 
-	if (!*head)
+	if (!*top)
 		return (FALSE);
-	temp = (*head)->content;
-	(*head)->content = (*head)->next->content;
-	(*head)->next->content = temp;
+	temp = (*top)->number;
+	(*top)->number = (*top)->next->number;
+	(*top)->next->number = temp;
 	return (TRUE);
 }
 

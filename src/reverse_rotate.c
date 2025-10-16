@@ -6,21 +6,21 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:08:00 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/10 16:56:13 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/15 22:40:39 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	reverse_rotate(t_list **head)
+int	reverse_rotate(t_stack **top)
 {
-	t_list	*last;
+	t_stack	*last;
 
-	if (!*head)
+	if (!*top)
 		return (FALSE);
-	last = lst_last(*head);
-	lst_del_back(head, NULL);
-	lst_add_front(head, last);
+	last = stack_last(*top);
+	stack_del_back(top, NULL);
+	stack_add_front(top, last);
 	return (TRUE);
 }
 

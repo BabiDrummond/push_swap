@@ -6,21 +6,21 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:07:58 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/10 16:56:21 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/15 22:40:51 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	push(t_list **head, t_list **node)
+int	push(t_stack **top, t_stack **node)
 {
-	t_list	*temp;
+	t_stack	*temp;
 
-	if (!*head || !*node)
+	if (!*top || !*node)
 		return (FALSE);
 	temp = *node;
-	lst_del_front(node, NULL);
-	lst_add_front(head, temp);
+	stack_del_front(node, NULL);
+	stack_add_front(top, temp);
 	return (TRUE);
 }
 
