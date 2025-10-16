@@ -7,19 +7,7 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 SRCS_DIR = src/
-SRCS = stack/stack_add_back.c	\
-	stack/stack_add_front.c		\
-	stack/stack_clear.c			\
-	stack/stack_del_back.c		\
-	stack/stack_del_front.c		\
-	stack/stack_del_node.c		\
-	stack/stack_iter.c			\
-	stack/stack_last.c			\
-	stack/stack_map.c			\
-	stack/stack_new.c			\
-	stack/stack_print_int.c		\
-	stack/stack_size.c			\
-	push.c						\
+SRCS = push.c					\
 	reverse_rotate.c 			\
 	rotate.c 					\
 	swap.c						\
