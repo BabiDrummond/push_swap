@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:27:47 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/17 02:29:18 by helios           ###   ########.fr       */
+/*   Updated: 2025/10/17 20:30:29 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ typedef struct s_stack
 	int				number;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct s_stacks
+{
+	t_stack	**a;
+	t_stack	**b;
+}	t_stacks;
 
 int		push(t_stack **top, t_stack **node);
 int		rotate(t_stack **top);

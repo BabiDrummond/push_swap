@@ -29,22 +29,26 @@ OBJS = $(SRCS:%.c=$(OBJS_DIR)%.o)
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(OBJS) $(LIBFT) -o $(NAME)
+	@$(CC) $(OBJS) $(LIBFT) -o $(NAME)
+	@echo -n "\033[0;32mGenerated push_swap\n"
 
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "\033[95mCompiling $(notdir $<)"
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+	@make --no-print-directory -C $(LIBFT_DIR)
 
 clean:
-	rm -rf $(OBJS_DIR)
-	make -C $(LIBFT_DIR) clean
+	@echo "\033[0;34mCleaning push_swap objects"
+	@rm -rf $(OBJS_DIR)
+	@make --no-print-directory -C $(LIBFT_DIR) clean
 
 fclean: clean
-	rm -f $(NAME)
-	make -C $(LIBFT_DIR) fclean
+	@echo "\033[0;34mCleaning push_swap"
+	@rm -f $(NAME)
+	@make --no-print-directory -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
@@ -55,6 +59,6 @@ gdb:
 	cc -Wall -Wextra -Werror src/main.c src/operations/** src/stack/** libft/src/str/* libft/src/mem/* libft/src/printf/* libft/src/num/* libft/src/char/* -g && gdb ./a.out && rm a.out
 
 valgrind: re
-	valgrind ./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
+	valgrind ./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7 a
 
 .PHONY: $(LIBFT) clean fclean re
