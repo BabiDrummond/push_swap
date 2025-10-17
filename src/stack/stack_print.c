@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_print_int.c                                    :+:      :+:    :+:   */
+/*   stack_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 18:39:49 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/13 21:56:29 by bmoreira         ###   ########.fr       */
+/*   Created: 2025/10/17 02:27:41 by helios            #+#    #+#             */
+/*   Updated: 2025/10/17 02:28:18 by helios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	stack_print(t_stack *top)
 {
-	while(top)
+	while (top)
 	{
 		ft_printf("%d\n", top->number);
 		top = top->next;

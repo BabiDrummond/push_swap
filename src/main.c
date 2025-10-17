@@ -6,7 +6,7 @@
 /*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/17 02:00:25 by helios           ###   ########.fr       */
+/*   Updated: 2025/10/17 02:31:13 by helios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	cleanup(t_stack **top, char **args, int exit_code)
 
 void	read_args(t_stack **top, char **argv)
 {
-	char **args;
-	long num;
-	int i;
+	char	**args;
+	long	num;
+	int		i;
 
 	while (*argv)
 	{
@@ -51,8 +51,8 @@ void	read_args(t_stack **top, char **argv)
 
 void	check_duplicates(t_stack **top)
 {
-	t_stack *node;
-	
+	t_stack	*node;
+
 	stack_bubble_sort(*top);
 	node = *top;
 	while (node->next)
@@ -65,8 +65,8 @@ void	check_duplicates(t_stack **top)
 
 int	main(int argc, char **argv)
 {
-	t_stack **top;
-	
+	t_stack	**top;
+
 	if (argc > 1)
 	{
 		top = ft_calloc(1, sizeof(t_stack *));
