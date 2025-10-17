@@ -1,0 +1,9 @@
+*.out
+.vscode
+push_swap
+obj
+TODO
+main
+test*
+*linux
+fail*

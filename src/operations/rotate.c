@@ -6,11 +6,11 @@
 /*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:08:03 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/17 01:59:54 by helios           ###   ########.fr       */
+/*   Updated: 2025/10/17 02:08:56 by helios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 int	rotate(t_stack **top)
 {
