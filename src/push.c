@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:07:58 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/15 22:40:51 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/17 01:59:41 by helios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	push(t_stack **top, t_stack **node)
 	if (!*top || !*node)
 		return (FALSE);
 	temp = *node;
-	stack_del_front(node, NULL);
+	stack_del_front(node);
 	stack_add_front(top, temp);
 	return (TRUE);
 }

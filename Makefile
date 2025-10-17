@@ -40,12 +40,12 @@ fclean: clean
 re: fclean all
 
 run: re
-	./$(NAME) "384 4 1000 8 3 238 18 2 300 400 500 8 7"
+	./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
 
 gdb:
-	cc -Wall -Wextra -Werror src/main.c libft/src/str/* libft/src/mem/* libft/src/printf/* libft/src/num/* libft/src/char/* libft/src/lst/* libft/src/sort/* -g && gdb ./a.out && rm a.out
+	cc -Wall -Wextra -Werror src/main.c libft/src/str/* libft/src/mem/* libft/src/printf/* libft/src/num/* libft/src/char/* libft/src/stack/* libft/src/sort/* -g && gdb ./a.out && rm a.out
 
 valgrind: re
-	valgrind ./$(NAME) "384 4 1000 8 3 238 18 2 300 400 aaa 500 8 7"
+	valgrind ./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
 
 .PHONY: $(LIBFT) clean fclean re

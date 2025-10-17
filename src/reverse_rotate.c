@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:08:00 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/15 22:40:39 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/17 01:59:49 by helios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	reverse_rotate(t_stack **top)
 	if (!*top)
 		return (FALSE);
 	last = stack_last(*top);
-	stack_del_back(top, NULL);
+	stack_del_back(top);
 	stack_add_front(top, last);
 	return (TRUE);
 }

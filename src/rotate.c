@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:08:03 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/15 22:41:25 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/17 01:59:54 by helios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	rotate(t_stack **top)
 	if (!*top)
 		return (FALSE);
 	temp = *top;
-	stack_del_front(top, NULL);
+	stack_del_front(top);
 	stack_add_back(top, temp);
 	temp->next = NULL;
 	return (TRUE);
