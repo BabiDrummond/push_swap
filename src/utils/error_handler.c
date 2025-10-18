@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 19:43:37 by bmoreira         ###   ########.fr       */
+/*   Created: 2025/10/18 19:35:39 by bmoreira          #+#    #+#             */
+/*   Updated: 2025/10/18 19:36:11 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	error_handler(t_stacks *stacks, char **args)
 {
-	t_stacks	stacks;
-
-	if (argc <= 1)
-		exit (EXIT_SUCCESS);
-	stacks_init(&stacks);
-	read_args(&stacks, argv + 1);
-	validate_duplicates(&stacks);
-	stack_print(*stacks.a);
-	stacks_free(&stacks);
+	if (stacks)
+		stacks_free(stacks);
+	if (args)
+		ft_split_free(args);
+	ft_printf("Error\n");
+	exit (EXIT_FAILURE);
 }

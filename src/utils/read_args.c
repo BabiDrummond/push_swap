@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   read_args.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 19:43:37 by bmoreira         ###   ########.fr       */
+/*   Created: 2025/10/18 19:36:27 by bmoreira          #+#    #+#             */
+/*   Updated: 2025/10/18 19:36:35 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	read_args(t_stacks *stacks, char **argv)
 {
-	t_stacks	stacks;
+	char	**args;
+	long	num;
+	int		i;
 
-	if (argc <= 1)
-		exit (EXIT_SUCCESS);
-	stacks_init(&stacks);
-	read_args(&stacks, argv + 1);
-	validate_duplicates(&stacks);
-	stack_print(*stacks.a);
-	stacks_free(&stacks);
+	while (*argv)
+	{
+		i = 0;
+		args = ft_split(*argv++, ' ');
+		if (!args)
+			error_handler(stacks, NULL);
+		while (args[i])
+		{
+			num = ft_atol(args[i++]);
+			if (num > INT_MAX || num < INT_MIN)
+				error_handler(stacks, args);
+			else
+				stack_push_back(stacks->a, stack_new((int) num));
+		}
+		ft_split_free(args);
+	}
 }

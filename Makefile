@@ -25,6 +25,10 @@ SRCS = operations/push.c		\
 	stack/stack_push_front.c	\
 	stack/stack_size.c			\
 	stack/stacks_free.c			\
+	stack/stacks_init.c		 	\
+	utils/error_handler.c		\
+	utils/read_args.c			\
+	utils/validate_duplicates.c	\
 	main.c
 OBJS_DIR = objs/
 OBJS = $(SRCS:%.c=$(OBJS_DIR)%.o)

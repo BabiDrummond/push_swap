@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:27:47 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 19:06:12 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/18 19:42:39 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,16 @@ void	stack_print(t_stack *stack);
 void	stack_push_back(t_stack **top, t_stack *new);
 void	stack_push_front(t_stack **top, t_stack *new);
 void	stacks_free(t_stacks *stacks);
+void	stacks_init(t_stacks *stacks);
 t_stack	*stack_dup(t_stack *stack);
 t_stack	*stack_last(t_stack *stack);
 t_stack	*stack_map(t_stack *stack, int (*f)(int));
 t_stack	*stack_new(int number);
 int		stack_size(t_stack *stack);
+
+// Utils
+void	error_handler(t_stacks *stacks, char **args);
+void	read_args(t_stacks *stacks, char **argv);
+void	validate_duplicates(t_stacks *stacks);
 
 #endif
