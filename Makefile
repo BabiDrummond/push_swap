@@ -59,9 +59,9 @@ run: re
 	./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
 
 gdb:
-	cc -Wall -Wextra -Werror src/main.c src/operations/** src/stack/** libft/src/str/* libft/src/mem/* libft/src/printf/* libft/src/num/* libft/src/char/* -g && gdb ./a.out && rm a.out
+	cc -Wall -Wextra -Werror -I./include/ src/main.c src/operations/** src/stack/** libft/src/str/* libft/src/mem/* libft/src/printf/* libft/src/num/* libft/src/char/* -g && gdb ./a.out && rm a.out
 
 valgrind: re
-	valgrind ./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
+	valgrind ./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7 a
 
 .PHONY: $(LIBFT) clean fclean re

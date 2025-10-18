@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 18:41:57 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/18 19:24:50 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,22 @@ void	read_args(t_stacks *stacks, char **argv)
 
 void	validate_duplicates(t_stacks *stacks)
 {
-	t_stack	*node;
+	t_stack	*new;
+	t_stack	*top;
 
-	stack_bubble_sort(*stacks->a);
-	node = *stacks->a;
-	while (node->next)
+	new = stack_dup(*stacks->a);
+	stack_bubble_sort(new);
+	top = new;
+	while (new->next)
 	{
-		if (node->number == node->next->number)
+		if (new->number == new->next->number)
+		{
+			stack_clear(&top);
 			error_handler(stacks, NULL);
-		node = node->next;
+		}
+		new = new->next;
 	}
+	stack_clear(&top);
 }
 
 void	init_stacks(t_stacks *stacks)
@@ -71,15 +77,12 @@ void	init_stacks(t_stacks *stacks)
 int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
-	t_stack		*new;
-	
+
 	if (argc <= 1)
 		exit (EXIT_SUCCESS);
 	init_stacks(&stacks);
 	read_args(&stacks, argv + 1);
 	validate_duplicates(&stacks);
 	stack_print(*stacks.a);
-	new = stack_dup(stacks.a);
-	stack_print(new);
 	stacks_free(&stacks);
 }

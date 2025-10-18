@@ -6,25 +6,25 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 00:48:10 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 17:35:27 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/18 19:07:39 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_bubble_sort(t_stack *top)
+void	stack_bubble_sort(t_stack *stack)
 {
 	t_stack	*curr;
 	int		temp;
 	int		size;
 	int		swapped;
 
-	if (!top)
+	if (!stack)
 		return ;
-	size = stack_size(top);
+	size = stack_size(stack);
 	while (size--)
 	{
-		curr = top;
+		curr = stack;
 		swapped = 0;
 		while (curr->next)
 		{
