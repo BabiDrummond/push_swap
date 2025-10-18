@@ -13,6 +13,7 @@ SRCS = operations/push.c		\
 	operations/swap.c			\
 	stack/stack_bubble_sort.c 	\
 	stack/stack_clear.c			\
+	stack/stack_dup.c			\
 	stack/stack_iter.c			\
 	stack/stack_last.c			\
 	stack/stack_map.c			\
@@ -55,7 +56,7 @@ fclean: clean
 re: fclean all
 
 run: re
-	./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7 8
+	./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
 
 gdb:
 	cc -Wall -Wextra -Werror src/main.c src/operations/** src/stack/** libft/src/str/* libft/src/mem/* libft/src/printf/* libft/src/num/* libft/src/char/* -g && gdb ./a.out && rm a.out
