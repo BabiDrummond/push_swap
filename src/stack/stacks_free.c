@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_add_front.c                                  :+:      :+:    :+:   */
+/*   stacks_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 02:28:28 by helios            #+#    #+#             */
-/*   Updated: 2025/10/17 02:28:34 by helios           ###   ########.fr       */
+/*   Created: 2025/10/18 16:46:27 by bmoreira          #+#    #+#             */
+/*   Updated: 2025/10/18 17:36:11 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
-void	stack_add_front(t_stack **top, t_stack *new)
+void	stacks_free(t_stacks *stacks)
 {
-	if (!top || !new)
+	if (!stacks)
 		return ;
-	new->next = *top;
-	*top = new;
+	if (stacks->a)
+	{
+		stack_clear(stacks->a);
+		free(stacks->a);
+	}
+	if (stacks->b)
+	{
+		stack_clear(stacks->b);
+		free(stacks->b);
+	}
 }

@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_del_back.c                                   :+:      :+:    :+:   */
+/*   stack_push_front.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 19:20:57 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/17 02:09:24 by helios           ###   ########.fr       */
+/*   Created: 2025/10/17 02:28:28 by helios            #+#    #+#             */
+/*   Updated: 2025/10/18 17:36:04 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
-void	stack_del_back(t_stack **top)
+void	stack_push_front(t_stack **top, t_stack *new)
 {
-	t_stack	*temp;
-
-	if (!top || !*top)
+	if (!top || !new)
 		return ;
-	temp = *top;
-	while (temp->next->next)
-		temp = temp->next;
-	free(temp->next);
-	temp->next = NULL;
+	new->next = *top;
+	*top = new;
 }

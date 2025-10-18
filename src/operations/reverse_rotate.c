@@ -3,25 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:08:00 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/17 02:08:53 by helios           ###   ########.fr       */
+/*   Updated: 2025/10/18 17:35:14 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
-int	reverse_rotate(t_stack **top)
+void	reverse_rotate(t_stack **top)
 {
 	t_stack	*last;
 
-	if (!*top)
-		return (FALSE);
+	if (!top || !*top)
+		return ;
 	last = stack_last(*top);
-	stack_del_back(top);
-	stack_add_front(top, last);
-	return (TRUE);
+	stack_pop_back(top);
+	stack_push_front(top, last);
+}
+
+void	rra(t_stacks *stacks)
+{
+	reverse_rotate(stacks->a);
+	ft_printf("rra\n");
+}
+
+void	rrb(t_stacks *stacks)
+{
+	reverse_rotate(stacks->b);
+	ft_printf("rrb\n");
+}
+
+void	rrr(t_stacks *stacks)
+{
+	reverse_rotate(stacks->a);
+	reverse_rotate(stacks->b);
+	ft_printf("rrr\n");
 }
 
 // void	print_list_int(t_list *head)

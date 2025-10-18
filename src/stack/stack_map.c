@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 02:28:00 by helios            #+#    #+#             */
-/*   Updated: 2025/10/17 02:28:08 by helios           ###   ########.fr       */
+/*   Updated: 2025/10/18 17:35:45 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 t_stack	*stack_map(t_stack *stack, int (*f)(int))
 {
@@ -28,7 +28,7 @@ t_stack	*stack_map(t_stack *stack, int (*f)(int))
 			stack_clear(&top);
 			return (NULL);
 		}
-		stack_add_back(&top, node);
+		stack_push_back(&top, node);
 		stack = stack->next;
 	}
 	return (top);

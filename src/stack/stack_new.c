@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_new.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:39:14 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/17 02:09:45 by helios           ###   ########.fr       */
+/*   Updated: 2025/10/18 17:35:48 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 t_stack	*stack_new(int number)
 {

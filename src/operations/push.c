@@ -3,25 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:07:58 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/17 02:08:47 by helios           ###   ########.fr       */
+/*   Updated: 2025/10/18 17:35:10 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
-int	push(t_stack **top, t_stack **node)
+void	push(t_stack **top, t_stack **node)
 {
 	t_stack	*temp;
 
-	if (!*top || !*node)
-		return (FALSE);
+	if (!top || !node || !*node)
+		return ;
 	temp = *node;
-	stack_del_front(node);
-	stack_add_front(top, temp);
-	return (TRUE);
+	stack_pop_front(node);
+	stack_push_front(top, temp);
+}
+
+void	pa(t_stacks *stacks)
+{
+	push(stacks->a, stacks->b);
+	ft_printf("pa\n");
+}
+
+void	pb(t_stacks *stacks)
+{
+	push(stacks->b, stacks->a);
+	ft_printf("pb\n");
 }
 
 // void	print_list_int(t_list *head)

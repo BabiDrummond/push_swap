@@ -3,25 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:39:15 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/17 02:09:00 by helios           ###   ########.fr       */
+/*   Updated: 2025/10/18 17:35:21 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
-int	swap(t_stack **top)
+void	swap(t_stack **top)
 {
 	int	temp;
 
-	if (!*top)
-		return (FALSE);
+	if (!top || !*top)
+		return ;
 	temp = (*top)->number;
 	(*top)->number = (*top)->next->number;
 	(*top)->next->number = temp;
-	return (TRUE);
+}
+
+void	sa(t_stacks *stacks)
+{
+	swap(stacks->a);
+	ft_printf("sa");
+}
+
+void	sb(t_stacks *stacks)
+{
+	swap(stacks->b);
+	ft_printf("sb");
+}
+
+void	ss(t_stacks *stacks)
+{
+	swap(stacks->a);
+	swap(stacks->b);
+	ft_printf("ss");
 }
 
 // int main(void)

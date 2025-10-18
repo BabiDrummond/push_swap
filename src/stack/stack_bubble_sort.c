@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_bubble_sort.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 00:48:10 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/17 02:09:17 by helios           ###   ########.fr       */
+/*   Updated: 2025/10/18 17:35:27 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 void	stack_bubble_sort(t_stack *top)
 {

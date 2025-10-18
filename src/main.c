@@ -6,32 +6,16 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/17 20:40:07 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/18 17:37:57 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
-
-void	free_stacks(t_stacks *stacks)
-{
-	if (!stacks)
-		return ;
-	if (stacks->a)
-	{
-		stack_clear(stacks->a);
-		free(stacks->a);
-	}
-	if (stacks->b)
-	{
-		stack_clear(stacks->b);
-		free(stacks->b);
-	}
-}
+#include "push_swap.h"
 
 void	error_handler(t_stacks *stacks, char **args)
 {
 	if (stacks)
-		free_stacks(stacks);
+		stacks_free(stacks);
 	if (args)
 		ft_split_free(args);
 	ft_printf("Error\n");
@@ -56,13 +40,13 @@ void	read_args(t_stacks *stacks, char **argv)
 			if (num > INT_MAX || num < INT_MIN)
 				error_handler(stacks, args);
 			else
-				stack_add_back(stacks->a, stack_new((int) num));
+				stack_push_back(stacks->a, stack_new((int) num));
 		}
 		ft_split_free(args);
 	}
 }
 
-void	check_duplicates(t_stacks *stacks)
+void	validate_duplicates(t_stacks *stacks)
 {
 	t_stack	*node;
 
@@ -92,7 +76,7 @@ int	main(int argc, char **argv)
 		exit (EXIT_SUCCESS);
 	init_stacks(&stacks);
 	read_args(&stacks, argv + 1);
-	check_duplicates(&stacks);
+	validate_duplicates(&stacks);
 	stack_print(*stacks.a);
-	free_stacks(&stacks);
+	stacks_free(&stacks);
 }
