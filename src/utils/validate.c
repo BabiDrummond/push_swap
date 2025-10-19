@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:37:01 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/19 00:02:18 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/19 01:37:05 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,5 @@ void	validate(t_stacks *stacks)
 	stack_bubble_sort(dup);
 	check_duplicates(stacks, dup);
 	assign_index(*stacks->a, dup);
-	ft_printf("new: \n");
-	stack_print(dup);
 	stack_clear(&dup);
 }
-
-// dup list
-// bubble sort dup
-// assign index initial stack
-// bubble sort index

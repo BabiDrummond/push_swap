@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:36:27 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/19 01:34:37 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/19 01:35:19 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,30 +34,4 @@ void	read_args(t_stacks *stacks, char **argv)
 		}
 		ft_split_free(args);
 	}
-}
-
-
-void	append(t_stacks *stacks, char **args)
-{
-	long	num;
-	int		i;
-	
-	i = 0;
-	if (!args)
-		error_handler(stacks, NULL);
-	while (args[i])
-	{
-		num = ft_atol(args[i++]);
-		if (num > INT_MAX || num < INT_MIN)
-			error_handler(stacks, args);
-		else
-			stack_push_back(stacks->a, stack_new((int) num));
-	}
-	ft_split_free(args);
-}
-
-void	parse(t_stacks *stacks, char **argv)
-{
-	while (*argv)
-		append(stacks, ft_split(*argv++, ' '));
 }
