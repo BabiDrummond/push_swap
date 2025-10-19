@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/19 00:48:07 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/19 01:34:33 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		exit (EXIT_SUCCESS);
 	stacks_init(&stacks);
-	read_args(&stacks, argv + 1);
+	parse(&stacks, argv + 1);
 	ft_printf("original: \n");
 	stack_print(*stacks.a);
 	validate(&stacks);
