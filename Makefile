@@ -23,12 +23,13 @@ SRCS = operations/push.c		\
 	stack/stack_pop_front.c		\
 	stack/stack_push_back.c		\
 	stack/stack_push_front.c	\
+	stack/stack_search.c		\
 	stack/stack_size.c			\
 	stack/stacks_free.c			\
 	stack/stacks_init.c		 	\
 	utils/error_handler.c		\
 	utils/read_args.c			\
-	utils/validate_duplicates.c	\
+	utils/validate.c			\
 	main.c
 OBJS_DIR = objs/
 OBJS = $(SRCS:%.c=$(OBJS_DIR)%.o)
@@ -60,7 +61,7 @@ fclean: clean
 re: fclean all
 
 run: re
-	./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
+	./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7 -1
 
 gdb:
 	cc -Wall -Wextra -Werror -I./include/ src/main.c src/operations/** src/stack/** libft/src/str/* libft/src/mem/* libft/src/printf/* libft/src/num/* libft/src/char/* -g && gdb ./a.out && rm a.out

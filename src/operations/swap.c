@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:39:15 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 17:35:21 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/19 00:26:57 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	swap(t_stack **top)
 
 	if (!top || !*top)
 		return ;
-	temp = (*top)->number;
-	(*top)->number = (*top)->next->number;
-	(*top)->next->number = temp;
+	temp = (*top)->index;
+	(*top)->index = (*top)->next->index;
+	(*top)->next->index = temp;
 }
 
 void	sa(t_stacks *stacks)

@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:36:27 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 19:36:35 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/19 01:08:27 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,13 @@ void	read_args(t_stacks *stacks, char **argv)
 				stack_push_back(stacks->a, stack_new((int) num));
 		}
 		ft_split_free(args);
+	}
+}
+
+void	parse(t_stacks *stacks, char **argv)
+{
+	while (*argv)
+	{
+		append(stacks, ft_split(*argv++, ' '));
 	}
 }

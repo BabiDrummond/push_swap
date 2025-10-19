@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 02:27:41 by helios            #+#    #+#             */
-/*   Updated: 2025/10/18 19:08:44 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/18 23:41:46 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	stack_print(t_stack *stack)
 {
 	while (stack)
 	{
-		ft_printf("%d\n", stack->number);
+		ft_printf("n: %d, i: %d\n", stack->number, stack->index);
 		stack = stack->next;
 	}
 }

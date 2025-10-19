@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:39:14 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 17:35:48 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/18 23:39:06 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*stack_new(int number)
 	if (!node)
 		return (NULL);
 	node->number = number;
+	node->index = 0;
 	node->next = NULL;
 	return (node);
 }
