@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:07:58 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 17:35:10 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/21 00:29:19 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,52 +35,43 @@ void	pb(t_stacks *stacks)
 	ft_printf("pb\n");
 }
 
-// void	print_list_int(t_list *head)
-// {
-// 	while(head)
-// 	{
-// 		printf("%d", *(int *)head->content);
-// 		head = head->next;
-// 	}
-// 	printf("\n");
-// }
-//
 // int main(void)
 // {
+// 	#include <stdio.h>
 //     // Test with ints
-// 	t_list *head_a = NULL;
-// 	t_list *head_b = NULL;
+// 	t_stack *head_a = NULL;
+// 	t_stack *head_b = NULL;
 // 	int vals[] = {9, 3, 1, 2, 4};
 // 	int vals2[] = {8, 3, 1, 2, 4};
 // 	int i = 0;
-//
+
 // 	while (i < 5)
-// 		lst_add_back(&head_a, lst_new(&vals[i++]));
+// 		stack_push_back(&head_a, stack_new(vals[i++]));
 // 	i = 0;
 // 	while (i < 5)
-// 		lst_add_back(&head_b, lst_new(&vals2[i++]));
-//
+// 		stack_push_back(&head_b, stack_new(vals2[i++]));
+
 // 	printf("Before: ");
-// 	print_list_int(head_a);
-// 	print_list_int(head_b);
+// 	stack_print(head_a);
+// 	stack_print(head_b);
 // 	push(&head_a, &head_b);
 // 	printf("After1: ");
-// 	print_list_int(head_a);
-// 	print_list_int(head_b);
+// 	stack_print(head_a);
+// 	stack_print(head_b);
 // 	push(&head_a, &head_b);
 // 	printf("After2: ");
-// 	print_list_int(head_a);
-// 	print_list_int(head_b);
+// 	stack_print(head_a);
+// 	stack_print(head_b);
 // 	push(&head_a, &head_b);
 // 	printf("After3: ");
-// 	print_list_int(head_a);
-// 	print_list_int(head_b);
+// 	stack_print(head_a);
+// 	stack_print(head_b);
 // 	push(&head_a, &head_b);
 // 	printf("After4: ");
-// 	print_list_int(head_a);
-// 	print_list_int(head_b);
+// 	stack_print(head_a);
+// 	stack_print(head_b);
 // 	push(&head_a, &head_b);
 // 	printf("After5: ");
-// 	print_list_int(head_a);
-// 	print_list_int(head_b);
+// 	stack_print(head_a);
+// 	stack_print(head_b);
 // }

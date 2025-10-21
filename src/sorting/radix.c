@@ -6,34 +6,33 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:46:22 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/20 22:32:06 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/21 01:20:00 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "push_swap.h"
+#include "push_swap.h"
 
-// int	count_digits_bin(unsigned int num)
-// {
-// 	unsigned	bin;
-// 	int			bits;
-// 	int			i;
+void	radix(t_stacks *stacks)
+{
+	unsigned int	mask;
+	int				bits;
+	int				size;
 
-// 	bits = sizeof(unsigned int) * BYTE_SIZE;
-// 	bin = MASK;
-// 	while (bin > 0)
-// 	{
-// 		if (bin & num)
-// 			return (bits);
-// 		bits--;
-// 		bin = bin >> 1;
-// 	}
-// 	return (bits);
-// }
-
-// void	radix(t_stacks *stacks)
-// {
-// 	int n;
-// 	n = count_digits_bin(123);
-// 	ft_printf("%d", n);
-// 	(void) stacks;
-// }
+	mask = 1;
+	bits = ft_count_digits_bin(stack_size(*stacks->a) - 1);
+	while (bits--)
+	{
+		size = stack_size(*stacks->a);
+		while (size--)
+		{
+			if (!((*stacks->a)->index & mask))
+				pb(stacks);
+			else
+				ra(stacks);
+		}
+		size = stack_size(*stacks->b);
+		while (size--)
+			pa(stacks);
+		mask = mask << 1;
+	}
+}

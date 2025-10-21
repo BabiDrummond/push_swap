@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stacks_init.c                                      :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 19:37:55 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/21 01:09:41 by bmoreira         ###   ########.fr       */
+/*   Created: 2025/10/21 01:43:58 by bmoreira          #+#    #+#             */
+/*   Updated: 2025/10/21 02:17:40 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stacks_init(t_stacks *stacks)
+int	is_sorted(t_stack *stack)
 {
-	stacks->a = ft_calloc(1, sizeof(t_stack *));
-	stacks->b = ft_calloc(1, sizeof(t_stack *));
-	if (!stacks->a || !stacks->b)
-		error_handler(stacks, NULL, EXIT_FAILURE);
+	int		sorted;
+
+	sorted = 1;
+	while (stack->next)
+	{
+		if (stack->number > stack->next->number)
+			sorted = 0;
+		stack = stack->next;
+	}
+	return (sorted);
 }

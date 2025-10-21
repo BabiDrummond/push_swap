@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:37:01 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/20 21:33:44 by helios           ###   ########.fr       */
+/*   Updated: 2025/10/21 01:44:04 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	check_duplicates(t_stacks *stacks, t_stack *dup)
 		if (dup->number == dup->next->number)
 		{
 			stack_clear(&top);
-			error_handler(stacks, NULL);
+			error_handler(stacks, NULL, EXIT_FAILURE);
 		}
 		dup = dup->next;
 	}
@@ -46,6 +46,8 @@ void	validate(t_stacks *stacks)
 {
 	t_stack	*dup;
 
+	if (is_sorted(*stacks->a))
+		error_handler(stacks, NULL, EXIT_SUCCESS);
 	dup = stack_dup(*stacks->a);
 	stack_bubble_sort(dup);
 	check_duplicates(stacks, dup);

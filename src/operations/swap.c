@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:39:15 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/20 22:59:04 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/21 02:15:33 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ void	swap(t_stack **top)
 void	sa(t_stacks *stacks)
 {
 	swap(stacks->a);
-	ft_printf("sa");
+	ft_printf("sa\n");
 }
 
 void	sb(t_stacks *stacks)
 {
 	swap(stacks->b);
-	ft_printf("sb");
+	ft_printf("sb\n");
 }
 
 void	ss(t_stacks *stacks)
 {
 	swap(stacks->a);
 	swap(stacks->b);
-	ft_printf("ss");
+	ft_printf("ss\n");
 }
 
 // int main(void)

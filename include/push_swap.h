@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:27:47 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/20 23:16:10 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/21 01:44:41 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ void	sa(t_stacks *stacks);
 void	sb(t_stacks *stacks);
 void	ss(t_stacks *stacks);
 
+// Sorting
+void	radix(t_stacks *stacks);
+void	sort(t_stacks *stacks);
+
 // Stack funcs
 void	stack_bubble_sort(t_stack *stack);
 void	stack_clear(t_stack **top);
@@ -67,7 +71,8 @@ t_stack	*stack_search(t_stack *stack, int target);
 int		stack_size(t_stack *stack);
 
 // Utils
-void	error_handler(t_stacks *stacks, char **args);
+void	error_handler(t_stacks *stacks, char **args, int exit_code);
+int		is_sorted(t_stack *stack);
 void	read_args(t_stacks *stacks, char **argv);
 void	validate(t_stacks *stacks);
 

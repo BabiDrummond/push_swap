@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 19:20:57 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 17:35:51 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/21 00:43:47 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ void	stack_pop_back(t_stack **top)
 	temp = *top;
 	while (temp->next->next)
 		temp = temp->next;
-	free(temp->next);
 	temp->next = NULL;
 }

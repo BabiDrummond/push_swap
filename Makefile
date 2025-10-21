@@ -11,6 +11,8 @@ SRCS = operations/push.c		\
 	operations/reverse_rotate.c \
 	operations/rotate.c 		\
 	operations/swap.c			\
+	sorting/radix.c				\
+	sorting/sort.c				\
 	stack/stack_bubble_sort.c 	\
 	stack/stack_clear.c			\
 	stack/stack_dup.c			\
@@ -28,6 +30,7 @@ SRCS = operations/push.c		\
 	stack/stacks_free.c			\
 	stack/stacks_init.c		 	\
 	utils/error_handler.c		\
+	utils/is_sorted.c			\
 	utils/read_args.c			\
 	utils/validate.c			\
 	main.c
@@ -61,12 +64,13 @@ fclean: clean
 re: fclean all
 
 run: re
-	./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7 -1
+	./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
 
-gdb:
-	cc -Wall -Wextra -Werror -I./include/ src/main.c src/operations/** src/stack/** libft/src/str/* libft/src/mem/* libft/src/printf/* libft/src/num/* libft/src/char/* -g && gdb ./a.out && rm a.out
+gdb: CFLAGS += -g -O0
+gdb: re
+	@gdb ./$(NAME)
 
 valgrind: re
-	valgrind ./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7 a
+	valgrind ./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
 
 .PHONY: $(LIBFT) clean fclean re
