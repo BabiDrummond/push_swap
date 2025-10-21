@@ -63,14 +63,4 @@ fclean: clean
 
 re: fclean all
 
-run: re
-	./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
-
-gdb: CFLAGS += -g -O0
-gdb: re
-	@gdb ./$(NAME)
-
-valgrind: re
-	valgrind ./$(NAME) 384 4 1000 8 3 238 18 2 300 400 500 7
-
 .PHONY: $(LIBFT) clean fclean re

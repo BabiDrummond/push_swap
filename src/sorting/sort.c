@@ -6,57 +6,66 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 01:17:57 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/21 03:05:03 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/21 20:47:36 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted_index(t_stack *stack)
-{
-	int		sorted;
-
-	sorted = 1;
-	while (stack->next)
-	{
-		if (stack->index > stack->next->index)
-			sorted = 0;
-		stack = stack->next;
-	}
-	return (sorted);
-}
-
-void	sort_tree(t_stacks *stacks)
+void	sort_three(t_stacks *stacks)
 {
 	unsigned int	max;
-	t_stack 		*i;
-	t_stack 		*j;
-	t_stack 		*k;
-	
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
 
-	i = *stacks->a;
-	j = i->next;
-	k = j->next;
-	max = stack_size(i) - 1;
-	if (i->index == max && j->index < k->index)
-		ra(stacks);
-	while(!is_sorted_index(i))
+	max = stack_size(*stacks->a) - 1;
+	if (max < 3)
+		sa(stacks);
+	while (!is_sorted(*stacks->a))
 	{
-		if (i->index > j->index)
-			sa(stacks);
-		else if (j->index > k->index)
-			rra(stacks);
+		i = (*stacks->a)->index;
+		j = (*stacks->a)->next->index;
+		k = (*stacks->a)->next->next->index;
+		if (i == max && j < k)
+			ra(stacks);
+		else
+		{
+			if (i > j)
+				sa(stacks);
+			if (j > k)
+				rra(stacks);
+		}
 	}
 }
 
-// void	sort_tree(t_stacks *stacks)
-// {
-// }
+void	sort_five(t_stacks *stacks)
+{
+	unsigned int	max;
+
+	max = stack_size(*stacks->a) - 1;
+	while (stack_size(*stacks->a) > 3)
+	{
+		if ((*stacks->a)->index == max || (*stacks->a)->index == max - 1)
+			pb(stacks);
+		else
+			ra(stacks);
+	}
+	sort_three(stacks);
+	if ((*stacks->b) && (*stacks->b)->index == max - 1)
+		sb(stacks);
+	while (*stacks->b)
+		pa(stacks);
+	while (!is_sorted(*stacks->a))
+		ra(stacks);
+}
 
 void	sort(t_stacks *stacks)
 {
-	if (stack_size(*stacks->a) == 3)
-		sort_tree(stacks);
+	if (stack_size(*stacks->a) <= 3)
+		sort_three(stacks);
+	else if (stack_size(*stacks->a) <= 5)
+		sort_five(stacks);
 	else
 		radix(stacks);
 }
