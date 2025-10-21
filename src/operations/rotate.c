@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:08:03 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/18 17:35:18 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/20 23:55:32 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ void	rotate(t_stack **top)
 void	ra(t_stacks *stacks)
 {
 	rotate(stacks->a);
-	ft_printf("ra");
+	ft_printf("ra\n");
 }
 
 void	rb(t_stacks *stacks)
 {
 	rotate(stacks->b);
-	ft_printf("rb");
+	ft_printf("rb\n");
 }
 
 void	rr(t_stacks *stacks)
 {
 	rotate(stacks->a);
 	rotate(stacks->b);
-	ft_printf("rr");
+	ft_printf("rr\n");
 }
 
 // void	print_list_int(t_list *head)

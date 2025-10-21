@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:39:15 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/19 00:26:57 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/20 22:59:04 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swap(t_stack **top)
 {
-	int	temp;
+	unsigned int	temp;
 
 	if (!top || !*top)
 		return ;
