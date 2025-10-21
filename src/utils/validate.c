@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:37:01 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/19 01:37:05 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/20 21:33:44 by helios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	assign_index(t_stack *stack, t_stack *dup)
 {
-	t_stack *node;
-	int		i;
+	t_stack			*node;
+	unsigned int	i;
 
 	i = 0;
 	while (dup)
@@ -28,7 +28,7 @@ void	assign_index(t_stack *stack, t_stack *dup)
 
 void	check_duplicates(t_stacks *stacks, t_stack *dup)
 {
-	t_stack *top;
+	t_stack	*top;
 
 	top = dup;
 	while (dup->next)

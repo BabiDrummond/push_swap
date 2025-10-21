@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:27:47 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/19 00:42:36 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/20 21:30:40 by helios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 typedef struct s_stack
 {
 	int				number;
-	long			index;
+	unsigned int	index;
 	struct s_stack	*next;
 }	t_stack;
 

@@ -3,22 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: helios <helios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/19 01:37:38 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/20 21:34:20 by helios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void    radix(t_stacks *stacks)
-// {	
-// }
-
 int	main(int argc, char **argv)
 {
-	#include <stdio.h>
 	t_stacks	stacks;
 
 	if (argc <= 1)
