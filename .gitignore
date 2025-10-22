@@ -1,7 +1,7 @@
 *.out
 .vscode
 push_swap
-obj
+obj*
 TODO
 main
 test*

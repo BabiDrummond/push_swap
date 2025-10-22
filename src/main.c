@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 03:38:11 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/21 01:53:01 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/21 21:33:53 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	main(int argc, char **argv)
 	stacks_init(&stacks);
 	read_args(&stacks, argv + 1);
 	validate(&stacks);
-	stack_print(*stacks.a);
 	sort(&stacks);
-	stack_print(*stacks.a);
 	stacks_free(&stacks);
 }
