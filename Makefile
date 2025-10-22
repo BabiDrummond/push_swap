@@ -31,6 +31,7 @@ SRCS = operations/push.c		\
 	stack/stacks_init.c		 	\
 	utils/error_handler.c		\
 	utils/is_sorted.c			\
+	utils/push_atoi.c			\
 	utils/read_args.c			\
 	utils/validate.c			\
 	main.c

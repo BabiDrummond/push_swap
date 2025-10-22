@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:27:47 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/21 01:44:41 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/10/22 01:25:07 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int		stack_size(t_stack *stack);
 // Utils
 void	error_handler(t_stacks *stacks, char **args, int exit_code);
 int		is_sorted(t_stack *stack);
+long	push_atoi(char *str);
 void	read_args(t_stacks *stacks, char **argv);
 void	validate(t_stacks *stacks);
 

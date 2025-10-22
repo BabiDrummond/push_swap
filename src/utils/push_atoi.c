@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_args.c                                        :+:      :+:    :+:   */
+/*   push_atoi.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 19:36:27 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/22 01:25:41 by bmoreira         ###   ########.fr       */
+/*   Created: 2025/10/06 21:56:16 by bmoreira          #+#    #+#             */
+/*   Updated: 2025/10/22 01:25:04 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	read_args(t_stacks *stacks, char **argv)
+long	push_atoi(char *str)
 {
-	char	**args;
 	long	num;
-	int		i;
+	int		negative;
 
-	while (*argv)
+	num = 0;
+	negative = 1;
+	if (*str == '-' || *str == '+')
+		if (*str++ == '-')
+			negative *= -1;
+	while (*str)
 	{
-		i = 0;
-		args = ft_split(*argv++, ' ');
-		if (!args)
-			error_handler(stacks, NULL, EXIT_FAILURE);
-		while (args[i])
-		{
-			num = push_atoi(args[i++]);
-			if (num > INT_MAX)
-				error_handler(stacks, args, EXIT_FAILURE);
-			else
-				stack_push_back(stacks->a, stack_new((int) num));
-		}
-		ft_split_free(args);
+		if (!ft_isdigit(*str))
+			return ((long) INT_MAX + 1);
+		num = (num * 10) + *str++ - 48;
+		if ((num > INT_MAX && negative == 1)
+			|| (num > (long) INT_MAX + 1 && negative == -1))
+			return ((long) INT_MAX + 1);
 	}
+	return (num * negative);
 }
