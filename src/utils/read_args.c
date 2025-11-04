@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 19:36:27 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/22 01:25:41 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/04 20:45:07 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void	read_args(t_stacks *stacks, char **argv)
 			else
 				stack_push_back(stacks->a, stack_new((int) num));
 		}
-		ft_split_free(args);
+		ft_matrix_free(args);
 	}
 }
