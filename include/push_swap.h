@@ -6,7 +6,7 @@
 /*   By: bmoreira <bmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 19:27:47 by bmoreira          #+#    #+#             */
-/*   Updated: 2025/10/22 01:25:07 by bmoreira         ###   ########.fr       */
+/*   Updated: 2025/11/03 21:23:59 by bmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../libft/include/libft.h"
-
-# define EXIT_SUCCESS 0
-# define EXIT_FAILURE 1
 
 typedef struct s_stack
 {
