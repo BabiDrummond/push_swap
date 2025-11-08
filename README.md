@@ -87,24 +87,6 @@ Example:
 
 ---
 
-## Project Structure
-
-```
-push_swap/
-├── src/
-│   ├── push_swap.c
-│   ├── operations.c
-│   ├── parsing.c
-│   ├── utils.c
-│   └── radix_sort.c
-├── include/
-│   └── push_swap.h
-├── Makefile
-└── README.md
-```
-
----
-
 ## Performance
 
 - Performs efficiently with large input sizes (500 numbers and above)
